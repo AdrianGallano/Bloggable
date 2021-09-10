@@ -1,0 +1,24 @@
+{% load static %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+</head>
+<nav class="mynavbar" id="mynavbar">
+    <ul class="nav-menu">
+        <li class="nav-item"><a href="#Home" class="nav-link">HOME</a></li>
+        <li class="nav-item"><a href="#Latest" class="nav-link">LATEST</a></li>
+        <li class="nav-item"><a href="#Contact" class="nav-link">CONTACT</a></li>
+    </ul>
+</nav>
+<script>
+var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("mynavbar").style.top = "0";
+        } else {
+            document.getElementById("mynavbar").style.top = "-5.8em";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+
+</script>

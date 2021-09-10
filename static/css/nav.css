@@ -1,0 +1,31 @@
+.mynavbar{
+    background-color: #262626;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: fixed;
+    transition: .4s;
+    top: 0;
+    z-index: 1001;
+}
+/* typography */
+.mynavbar a{
+    color: #F2F2F2;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 1em;
+}
+.mynavbar a:hover, :focus{
+    color: #BF2C53;
+    transition: 300ms ease-out;
+}
+.mynavbar ul{
+    list-style-type: none;
+    letter-spacing: 2px;
+}
+/* placement */
+.nav-menu{
+    display: flex;
+    margin: 2em;
+}

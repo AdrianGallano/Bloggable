@@ -1,5 +1,44 @@
 {% extends 'main.html' %}
-{% block content %}
-<h1>content</h1>
+{% load static %}
+{% block main %}
+<head>
+    <link rel="stylesheet" href="{% static 'blog/index.css' %}">
+</head>
+<div class="my-container" id="Home">
+    <img src="{% static '../../static/images/header.jpg' %}" alt="Header">
+    <div class="layer">
+    </div> <!-- layer end -->
+    <div class="intro">
+        <h1>CODING ADVENTURES.</h1>
+        <p>Follow me on my journey as a wandering kid on a humble field,<br>
+        be on your each step, i'll patiently wait. 
+        </p>
+    </div> <!--intro end -->
+    <div class="grid-container">
+        <div class="item-top">
+            C
+        </div>
+        <div class="item-top">
+            O
+        </div>
+        <div class="item-bottom">
+            D
+        </div>
+        <div class="item-bottom">
+            E
+        </div>
+    </div>
+</div> <!-- my container end-->
+<div class="my-container-grid" id="Latest">
+    <div class="latest-container">
+        <h1>LATEST</h1>
+        <div class="latest-card">
+            <img src="{% static 'images/header.jpg' %}" alt="">
+            <div class="latest-card-body">
+                somecontent
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
