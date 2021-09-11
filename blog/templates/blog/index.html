@@ -4,16 +4,15 @@
 <head>
     <link rel="stylesheet" href="{% static 'blog/index.css' %}">
 
-</head>
+</head> 
 <div class="my-container" id="Home">
-    <img src="{% static '../../static/images/header.jpg' %}" alt="Header">
-    <div class="layer">
-    </div> <!-- layer end -->
+    <img src="{% static 'images/header.jpg' %}" alt="Header">
     <div class="intro">
         <h1>CODING ADVENTURES.</h1>
         <p>Follow me on my journey as a wandering kid on a humble field,<br>
         be on your each step, i'll patiently wait. 
         </p>
+        <a href="" class="button-blogs">BLOGS</a>
     </div> <!--intro end -->
     <div class="grid-container">
         <div class="item-top">
@@ -33,24 +32,31 @@
 
 <div class="my-container-grid" id="Latest">
     <h1>LATEST</h1>
-    <div class="card">
-        <img src="{{blog.image}}" alt="">
+    <div class="card" href='{% static "home" %}'>
+        <img src="{{blog.image.url}}" alt="blog image">
         <div class="card-body">
-            <h5>{{blog.title}}</h5>
+                <h5>{{blog.title}}</h5>
             <p>{{blog.description}}</p>
+            <hr style="opacity: .5;">
             <div class="card-footer">
                 <div class="profile-card">
-                    <img src="{% static 'images/author.jpg' %}" alt="">
+                    <img src="{% static 'images/author.jpg' %}" alt="author">
                     <div class="profile-info">
                         <h5>Adrian Gallano</h5>
-                        <p>{{blog.date_published}}</p>
+                        <p>{{blog.date_published}} | {{blog.min_read}}</p>
                     </div>
                 </div>
-                <div class="min-read">{{blog.min_read}}</div>
+                <a href="{% url 'blog:blogs' blog.id %}" class="read-more"> READ MORE </a>
             </div>
         </div>
     </div>
 </div>
 
+<div class="contact" id="Contact">
+    <h1>CONTACT</h1>
+    <div class="contact-card">
+        <img src="{% static 'images/author.jpg' %}"  alt="author">
+    </div>
+</div>
 {% endblock %}
 
