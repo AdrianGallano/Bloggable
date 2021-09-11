@@ -21,8 +21,8 @@ img{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #262626;
-    opacity: 0.9;
+    background-color: #fff;
+    opacity: 0.5;
 }
 /* Header Background End */
 /* Header Intro */
@@ -31,15 +31,16 @@ img{
     flex-direction: column;
 }
 .intro h1{
-    color: #F2F2F2;
+    color: #262626;
     font-size: 2.5rem;
 }
 .intro p{
     letter-spacing: 2px;
     opacity: 0.9;
-    color: #F2F2F2;
+    color: #262626;
     font-size: 1rem;
     line-height: 1.5;
+    font-weight: 500;
 }
 @media (min-width:1025px){
     .intro{
@@ -48,7 +49,7 @@ img{
         flex-direction: column;
     }
     .intro h1{
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     .intro p{
         font-size: .7rem;
@@ -74,7 +75,7 @@ img{
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
-        color: #F2F2F2;
+        color: #262626;
         font-size: 10rem;
         font-weight: 900;
         gap: 1px;
@@ -89,31 +90,95 @@ img{
 
 /* CODE GRID End */
 /* Latest Section */
+
 .my-container-grid{
     box-sizing: border-box;
     height: 100vh;
-    display: grid;
-    padding: 5em 23em;
+    display: flex;
+    flex-direction: column;
+    padding: 1em 5em;
     width: 100%;
+    grid-auto-flow: row;
 }
 
-.latest-container{
-    width: 50%;
+/* Latest section typography */
+.my-container-grid h1{
+    color: #262626;
+    font-size: 6rem;
+    margin-bottom: 15px;
 }
+.card-body{
+    color: #262626;
+    display: flex;
+    flex-direction: column;
+}
+.card-body h5{
+    margin: .5em 0;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.card-body p{
+    opacity: .8;
+    font-size: .8rem;
+    height: 70%;
+}
+.min-read{
+    opacity: 0.5;
+    font-size: .7rem;
+    align-self: end;
+    justify-self: end;
+}
+/* Latest section typography end */
 
-.latest-container h1{
-    color: #BF2C53;
-    font-size: 5rem;
-    width: 100%;
-}
 .card{
-    padding: 20px;
-    width: 100%;
-}
-.img-card{
+    justify-self:center;
+    align-self: center;
     width: 70%;
-    height: 20vh;
+    height: 70%;
+    display:flex;
+    flex-direction: column;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.card:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.card-footer{
+    display: flex;
+    flex-direction: column;
+}
+.card img{
+    position: relative;
+    width: 100%;
+    height: 50%;
     object-fit: cover;
 }
-
+.card-body{
+    position: relative;
+    box-sizing: border-box;
+    padding: 1em 3em;
+    background-color: #f2f2f2;
+    width: 100%;
+    height: 50%;
+}
+.profile-card{
+    display: flex;
+    z-index: 10;
+    position: relative;
+    height: 10vh;
+    width: 50%;
+    flex-direction: row;
+    align-content: center;
+}
+.profile-card img{
+    border-radius: 100%;
+    object-fit: cover;
+    height: 60px;
+    width: 60px;
+    align-self: center;
+    justify-self: center;
+}
+.profile-info h5{
+    margin:0;
+}
 /* Latest Section End */

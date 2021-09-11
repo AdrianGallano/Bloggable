@@ -9,7 +9,7 @@ class Blog(models.Model):
     description = models.CharField(max_length=300, blank=True, null=True)
     date_published = models.DateField(auto_now=True)
     last_updated = models.DateField(auto_now_add=True)
-    image = models.ImageField(null=True,blank=False)
+    image = models.ImageField(null=True,blank=True, default='../../../static/images/default.png')
     best = models.BooleanField(default=False)
     id = models.UUIDField(default=uuid.uuid4, primary_key=True, unique=True, editable=False)
     
@@ -22,3 +22,6 @@ class Comment(models.Model):
     blog = models.ForeignKey(Blog, null=True, on_delete=models.CASCADE, related_name='comment')
     user = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
     content = models.TextField(null=True)
+
+    def __str__(self):
+        return self.user.username

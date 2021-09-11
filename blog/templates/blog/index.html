@@ -29,19 +29,28 @@
             E
         </div>
     </div>
-</div> <!-- my container end-->
-<!--<div class="my-container-grid" id="Latest">
-    <div class="latest-container">
-        <h1>LATEST</h1>
-        <div class="card">
-            <img src="" alt="" class="img-card">
-            <div class="card-body">
-                <h5 class="card-title"></h5>
-                <p class="card-text"></p>
+</div>
+
+<div class="my-container-grid" id="Latest">
+    <h1>LATEST</h1>
+    <div class="card">
+        <img src="{{blog.image}}" alt="">
+        <div class="card-body">
+            <h5>{{blog.title}}</h5>
+            <p>{{blog.description}}</p>
+            <div class="card-footer">
+                <div class="profile-card">
+                    <img src="{% static 'images/author.jpg' %}" alt="">
+                    <div class="profile-info">
+                        <h5>Adrian Gallano</h5>
+                        <p>{{blog.date_published}}</p>
+                    </div>
+                </div>
+                <div class="min-read">{{blog.min_read}}</div>
             </div>
         </div>
-    </div> 
-</div>-->
+    </div>
+</div>
 
 {% endblock %}
 
