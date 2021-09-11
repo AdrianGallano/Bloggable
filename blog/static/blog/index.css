@@ -1,9 +1,10 @@
 .my-container{
+    padding: 8vw;
     height: 100vh;  
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    width: 100%;
 /* Header Background */
 }
 img{
@@ -27,37 +28,65 @@ img{
 /* Header Intro */
 .intro{
     display: flex;
-    width: 40%;
     flex-direction: column;
 }
 .intro h1{
     color: #F2F2F2;
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 .intro p{
     letter-spacing: 2px;
     opacity: 0.9;
     color: #F2F2F2;
-    font-size: .6rem;
-    line-height: 1.8;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+@media (min-width:1025px){
+    .intro{
+        display: flex;
+        width: 50%;
+        flex-direction: column;
+    }
+    .intro h1{
+        font-size: 2.5rem;
+    }
+    .intro p{
+        font-size: .7rem;
+        line-height: 1.8;
+    }
+}
+@media (max-width:300px){
+    .intro h1{
+        font-size: 2rem;
+    }
+    .intro p{
+        font-size: .6rem;
+        line-height: 1.5;
+    }
 }
 /* Header Intro End*/
 /* CODE GRID */
 .grid-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    color: #F2F2F2;
-    font-size: 10rem;
-    font-weight: 900;
-    gap: 1px;
+    display: none;
 }
-.item-top{
-    margin: 0 0 -15px 0;
+@media (min-width:1025px){
+    .grid-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        color: #F2F2F2;
+        font-size: 10rem;
+        font-weight: 900;
+        gap: 1px;
+    }
+    .item-top{
+        margin: 0 0 -15px 0;
+    }
+    .item-bottom{
+        margin: -20px 0 0 0;
+    }
 }
-.item-bottom{
-    margin: -20px 0 0 0;
-}
+
 /* CODE GRID End */
 /* Latest Section */
 .my-container-grid{
@@ -68,22 +97,23 @@ img{
     width: 100%;
 }
 
+.latest-container{
+    width: 50%;
+}
+
 .latest-container h1{
     color: #BF2C53;
     font-size: 5rem;
     width: 100%;
 }
-.latest-card{
-    border-radius: 3px;
-    opacity: 0.9;
-    background-color: #f2f2f2;
-    height: 80%;
+.card{
+    padding: 20px;
     width: 100%;
 }
-.latest-card img{
+.img-card{
+    width: 70%;
+    height: 20vh;
     object-fit: cover;
-    width: 30%;
-    height: 65.9%;
 }
 
 /* Latest Section End */

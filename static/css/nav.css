@@ -16,7 +16,7 @@
     font-weight: 500;
     margin: 0 1em;
 }
-.mynavbar a:hover, :focus{
+.mynavbar a:hover,:focus{
     color: #BF2C53;
     transition: 300ms ease-out;
 }
@@ -25,7 +25,7 @@
     letter-spacing: 2px;
 }
 /* placement */
-.nav-menu{
+.my-nav-menu{
     display: flex;
     margin: 2em;
 }

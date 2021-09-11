@@ -6,6 +6,9 @@ body{
     background-color: #262626;
 
 }
+main{
+    width: 100%;
+}
 *{
     box-sizing: border-box;
     margin: 0;

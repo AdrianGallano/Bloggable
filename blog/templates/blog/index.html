@@ -3,6 +3,7 @@
 {% block main %}
 <head>
     <link rel="stylesheet" href="{% static 'blog/index.css' %}">
+
 </head>
 <div class="my-container" id="Home">
     <img src="{% static '../../static/images/header.jpg' %}" alt="Header">
@@ -29,16 +30,18 @@
         </div>
     </div>
 </div> <!-- my container end-->
-<div class="my-container-grid" id="Latest">
+<!--<div class="my-container-grid" id="Latest">
     <div class="latest-container">
         <h1>LATEST</h1>
-        <div class="latest-card">
-            <img src="{% static 'images/header.jpg' %}" alt="">
-            <div class="latest-card-body">
-                somecontent
+        <div class="card">
+            <img src="" alt="" class="img-card">
+            <div class="card-body">
+                <h5 class="card-title"></h5>
+                <p class="card-text"></p>
             </div>
         </div>
-    </div>
-</div>
+    </div> 
+</div>-->
+
 {% endblock %}
 
