@@ -1,4 +1,4 @@
-.my-container{
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');.my-container{
     padding: 8vw;
     height: 100vh;  
     display: flex;
@@ -6,10 +6,11 @@
     align-items: center;
     width: 100%;
     background-color: rgba(242, 242, 242, .3);
+    z-index: auto;
 /* Header Background */
 }
 img{
-    z-index: -1000;
+    z-index: -10;
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -32,24 +33,24 @@ img{
     opacity: 0.9;
     color: #262626;
     font-size: 1rem;
-    line-height: 1.5;
     font-weight: 500;
 }
 .button-blogs{
     display: flex;
+    letter-spacing: 2px;
     align-self: flex-start;
     margin-top: 1em;
     text-decoration: none;
-    color: #BF2C53;
+    color: #f2f2f2;;
+    background-color:#262626;
+    font-size: .6rem;
     font-weight: 500;
-    font-size: 1rem;
-    border: 1px solid #BF2C53;
-    padding: .5em 1.5em;
-    border-radius: 2px;
-    transition: .3s;
+    padding: 1.3em 2.9em;
+    transition: 300ms;
+    font-family: 'Open Sans', sans-serif;
 }
-.button-blogs:hover,:focus{
-    background-color: #bf2c533a;
+.button-blogs:hover{
+    background-color: #73293D;
 }
 @media (min-width:1150px){
     .intro{
@@ -122,13 +123,13 @@ img{
     width: 100%;
     align-content: center;
     justify-content: center;
+    z-index: auto;
 }
 /* Latest section typography */
 .my-container-grid h1{
     color: #262626;
     font-size: 4rem;
     align-self: center;
-    margin-bottom: 15px;
 }
 .card-body{
     color: #262626;
@@ -154,32 +155,20 @@ img{
 /* Latest section typography end */
 
 
-@media (min-width:400px) {
+@media (max-width:500px) {
+    .my-container-grid{
+        padding: 1em 1em;
+        grid-auto-flow: row;
+    }
     .card-body h5{
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     .card-body p{
         font-size:.6rem;
     }
 }
-@media (min-width:700px) {
-    .my-container-grid{
-        padding: 1em 5em;
-        grid-auto-flow: row;
-    }
-    /* Latest section typography */
-    .my-container-grid h1{
-        font-size: 6rem;
-    }
-    .card-body h5{
-        font-size: 1.2rem;
-    }
-    .card-body p{
-        font-size: .7rem;
-    }
-}
 
-@media (min-width:970px) {
+@media (min-width:720px) {
     .my-container-grid{
         padding: 1em 5em;
         grid-auto-flow: row;
@@ -189,10 +178,10 @@ img{
         font-size: 6rem;
     }
     .card-body h5{
-        font-size: 1.4rem;
+        font-size: 1.5rem;
     }
     .card-body p{
-        font-size: .9rem;
+        font-size: 1rem;
     }
 }
 /* Blog card components */
@@ -233,20 +222,20 @@ img{
     justify-self: end;
     align-self: center;
     text-decoration: none;
-    color: #BF2C53;
+    color: #262626;
     font-weight: 700;
     font-size: .8rem;
 }
 
 .read-more:hover{
-    border-bottom: 2px solid #BF2C53;
+    border-bottom: 2px solid #73293D;
 }
 .card img{
     position: relative;
     width: 100%;
     height: 50%;
     object-fit: cover;
-    z-index: 1;
+    z-index: auto;
 }
 .card-body{
     position: relative;
@@ -283,10 +272,18 @@ img{
     font-size: 1rem;
     margin:0;
 }
-@media (max-width:470px){
+@media (max-width:530px){
+    .profile-card img{
+        height: 30px;
+        width: 30px;
+    }
     .profile-info h5{
         font-size: .6rem;
-}}
+    }
+    .read-more{
+        font-size: .6rem;
+    }
+}
 /* Profile card End */
 /* Blog card components End */
 /* Latest Section End */
@@ -295,34 +292,119 @@ img{
 .contact{
     display: flex;
     flex-direction: column;
-    padding: 1em 5em;
+    padding: 1em 1em;
     margin: 0;
     height: 100vh;
     width: 100%;
     align-items: center;
-    justify-items: center;
-    background-color: rgba(242, 242, 242, .3);
-}
-.contact h1{
-
-    font-size: 6rem;
-    margin-bottom:15px ;
+    justify-content: center;
+    background-color: #262626e6;
+    
 }
 .contact-card{
     display: flex;
-    border-radius: 8px;
-    width: 80%;
-    height: 70%;
-    background-color: #f2f2f2e6;
-    z-index: -1;
+    flex-direction: column; 
+    width: 90%;
+    height: 90%;
+    background-color: #f2f2f2;
+    padding: 2.6em;
+    z-index: auto;
 }
+.contact h1{
+    color: #f2f2f2;
+    font-size: 3rem;
+    opacity: .9;
+}
+
+/* continue here */
 .contact-card img{
+    display: flex;
     position: relative;
-    width: 50%;
-    height: 100%;
+    width: 100%;
+    height: 45%;
     object-fit: cover;
-    z-index: 1;
-    border-top-left-radius:8px;
-    border-bottom-left-radius:8px;
+    z-index: auto;
+    opacity: .7;
+}
+.contact-card-info{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contact-card-info h3{
+    color: #262626;
+    font-size: 1rem;
+    text-align: center;
+    margin: 1em 0;
+
+}
+/* Submit button */
+.form-submit{
+    color: #f2f2f2;
+    background-color: #262626;
+    padding: 1em 3em;
+    border-color: transparent;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 2px;    
+    font-size: .8rem;
+    align-self: flex-end;
+    margin: 1em 0;
+}
+.form-submit:hover{
+    background-color: #73293D;
+    transition: 300ms;
+}
+/* Submit button end */
+/* Fields */
+.contact-card-info-main [type='text'],[type='email'], textarea{
+    margin-top: 1em;
+    padding-bottom: .7em;
+    border: none;
+    border-bottom: 2px solid #262626;
+    background-color: transparent;
+}
+textarea {
+	line-height: 150%;
+	height: 60px;
+	resize: none;
+    width: 100%;
+}
+.contact-card-info-main [type='text']:focus, [type='email']:focus, textarea:focus {
+	outline: none;
+	padding: 0 0 0.875em 0;
+}
+/* Fields end */
+@media (min-width:1050px){
+    .contact{
+        padding: 1em 5em;
+    }
+    .contact-card{
+        flex-direction: row; 
+        width: 80%;
+        height: 70%;
+    }
+    .contact h1{
+        font-size: 6rem;
+    }
+    .contact-card img{
+        width: 45%;
+        height: 100%;
+    }
+    .contact-card-info{
+        width: 55%;
+    }
+    .contact-card-info h3{
+        font-size: 3rem;
+        margin: 0;
+    }
+
+    .contact-card-info-main{
+        display: flex;
+        justify-content: start;
+        padding: 5em;
+    }
+
 }
 /* Contact Section End*/

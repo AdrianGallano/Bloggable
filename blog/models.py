@@ -6,7 +6,7 @@ class Blog(models.Model):
     title = models.CharField(max_length=40, blank=True, null=True)
     content = models.TextField(blank=True, null=True)
     min_read = models.CharField(max_length=20, null=True)
-    description = models.CharField(max_length=300, blank=True, null=True)
+    description = models.CharField(max_length=230, blank=True, null=True)
     date_published = models.DateField(auto_now=True)
     last_updated = models.DateField(auto_now_add=True)
     image = models.ImageField(null=True,blank=True, default='default.png')

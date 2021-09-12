@@ -12,7 +12,7 @@
         <p>Follow me on my journey as a wandering kid on a humble field,<br>
         be on your each step, i'll patiently wait. 
         </p>
-        <a href="" class="button-blogs">BLOGS</a>
+        <a href="{% url 'blog:blogs' %}" class="button-blogs">BLOGS</a>
     </div> <!--intro end -->
     <div class="grid-container">
         <div class="item-top">
@@ -46,7 +46,7 @@
                         <p>{{blog.date_published}} | {{blog.min_read}}</p>
                     </div>
                 </div>
-                <a href="{% url 'blog:blogs' blog.id %}" class="read-more"> READ MORE </a>
+                <a href="{% url 'blog:latest' blog.id %}" class="read-more"> READ MORE </a>
             </div>
         </div>
     </div>
@@ -56,6 +56,27 @@
     <h1>CONTACT</h1>
     <div class="contact-card">
         <img src="{% static 'images/author.jpg' %}"  alt="author">
+        <div class="contact-card-info">
+            <h3 >GET IN TOUCH</h3>
+            <div class="contact-card-info-main">
+                <form action="{% url 'blog:send_email' %}" method="POST">
+                    {% csrf_token %}
+                    <div  class="name">
+                        <label for="name" ></label>
+                        <input type="text" id="name" placeholder="MY NAME IS" maxlength="50" required><br>
+                    </div>
+                    <div class="email"> 
+                        <label for="email" ></label>
+                        <input type="email"  id="email" placeholder="MY EMAIL IS" class="form-input" required><br>
+                    </div>
+                    <div class="message">
+                        <label for="message"></label>
+                        <textarea  placeholder="I'D LIKE TO TALK ABOUT" name="message" id="message" cols="30" rows="10" required></textarea>
+                    </div>
+                    <input type="submit" value="SUBMIT"  class="form-submit">
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}
