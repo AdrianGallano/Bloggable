@@ -344,7 +344,7 @@ img{
     flex-direction: column;
     width: 100%;
     height: 100%;
-
+    justify-content: center;
 }
 
 .contact-card-info h3{
@@ -397,6 +397,10 @@ textarea {
 	outline: none;
 	padding: 0 0 0.875em 0;
 }
+.contact-card-info-main{
+    display: flex;
+    flex-direction: column;
+}
 /* Fields end */
 @media (min-width:1050px){
     .contact{
@@ -417,6 +421,7 @@ textarea {
     .contact-card-info{
         width: 55%;
         justify-content: center;
+        /* align-items: center; */
     }
     .contact-card-info h3{
         font-size: 3rem;
@@ -427,7 +432,6 @@ textarea {
     }
 
     .contact-card-info-main{
-
         padding: 0 0 0 8em;
     }
 

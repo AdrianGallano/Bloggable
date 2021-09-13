@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Blog
+from .forms import BlogFilter
 
 def index(request):
     nav = True
@@ -12,8 +13,10 @@ def index(request):
 
 def blogs(request):
     blogs = Blog.objects.order_by('-date_published')
+    blogfilter = BlogFilter(request.GET, queryset=blogs)
+    blogs = blogfilter.qs.order_by('-date_published')
     template = 'blog/blogs.html'
-    context = {'blogs':blogs}
+    context = {'blogs':blogs, 'blogfilter':blogfilter}
     return render(request, template, context)
 
 def blog(request, pk):

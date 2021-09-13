@@ -2,12 +2,21 @@
 {% load static %}
 {% block main %}
 <head>
-    <link rel="stylesheet" href="{% static 'blog/blog.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/blogs.css' %}">
 </head>
 <div class="back-button">
 <a href="{% url 'blog:index' %}"><i class="far fa-caret-square-left fa-4x"></i></a>
 </div>
     <div class="blog-nav">
+    <h1>BLOGS</h1>
+    <form action="" method="GET">
+        {% csrf_token %}
+        <h5>Title:</h5>
+        {{blogfilter.form.title}}
+        <h5>Best blogs:</h5>
+        {{blogfilter.form.best}}<br>
+        <input type="submit" value="Search" id='submit-button'>
+    </form>
     </div>
     <div class="grid-blog-container">
         {% for blog in blogs %}
