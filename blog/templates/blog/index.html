@@ -3,8 +3,8 @@
 {% block main %}
 <head>
     <link rel="stylesheet" href="{% static 'blog/index.css' %}">
-
 </head> 
+
 <div class="my-container" id="Home">
     <img src="{% static 'images/header.jpg' %}" alt="Header">
     <div class="intro">
@@ -46,7 +46,7 @@
                         <p>{{blog.date_published}} | {{blog.min_read}}</p>
                     </div>
                 </div>
-                <a href="{% url 'blog:latest' blog.id %}" class="read-more"> READ MORE </a>
+                <a href="{% url 'blog:blog' blog.id %}" class="read-more"> READ MORE </a>
             </div>
         </div>
     </div>

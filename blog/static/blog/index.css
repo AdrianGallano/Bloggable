@@ -272,6 +272,10 @@ img{
     font-size: 1rem;
     margin:0;
 }
+.profile-info p{
+    font-size: .7rem;
+}
+
 @media (max-width:530px){
     .profile-card img{
         height: 30px;
@@ -282,6 +286,15 @@ img{
     }
     .read-more{
         font-size: .6rem;
+    }
+    .profile-info p{
+        font-size: .5rem;
+    }
+}
+
+@media (max-width:350px){
+    .profile-info p{
+        font-size: .4rem;
     }
 }
 /* Profile card End */
@@ -330,6 +343,8 @@ img{
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: 100%;
+
 }
 
 .contact-card-info h3{
@@ -337,7 +352,7 @@ img{
     font-size: 1rem;
     text-align: center;
     margin: 1em 0;
-
+    align-items: center;
 }
 /* Submit button */
 .form-submit{
@@ -349,7 +364,7 @@ img{
     cursor: pointer;
     letter-spacing: 2px;    
     font-size: .8rem;
-    align-self: flex-end;
+    float: right;
     margin: 1em 0;
 }
 .form-submit:hover{
@@ -358,12 +373,19 @@ img{
 }
 /* Submit button end */
 /* Fields */
+.contact-card-info-main [type='text'],[type='email']{
+    width: 70%;
+}
 .contact-card-info-main [type='text'],[type='email'], textarea{
     margin-top: 1em;
     padding-bottom: .7em;
     border: none;
     border-bottom: 2px solid #262626;
     background-color: transparent;
+    display: flex;
+    justify-content: start;
+    justify-self: flex-end;
+
 }
 textarea {
 	line-height: 150%;
@@ -394,16 +416,19 @@ textarea {
     }
     .contact-card-info{
         width: 55%;
+        justify-content: center;
     }
     .contact-card-info h3{
         font-size: 3rem;
         margin: 0;
     }
+    .contact-card-info-main [type='text'],[type='email']{
+        width: 50%;
+    }
 
     .contact-card-info-main{
-        display: flex;
-        justify-content: start;
-        padding: 5em;
+
+        padding: 0 0 0 8em;
     }
 
 }

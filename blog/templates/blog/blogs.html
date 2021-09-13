@@ -1,4 +1,33 @@
 {% extends 'main.html' %}
+{% load static %}
 {% block main %}
-<h1>BLOGS</h1>
+<head>
+    <link rel="stylesheet" href="{% static 'blog/blog.css' %}">
+</head>
+<div class="back-button">
+<a href="{% url 'blog:index' %}"><i class="far fa-caret-square-left fa-4x"></i></a>
+</div>
+    <div class="blog-nav">
+    </div>
+    <div class="grid-blog-container">
+        {% for blog in blogs %}
+        <div class="blog-card">
+            <img src="{{blog.image.url}}" alt="header">
+            <div class="card-body">
+                <h5>{{blog.title}}</h5>
+                <p>{{blog.description}}</p>
+            </div>
+            <div class="card-footer">
+                <div>
+                <p>{{blog.date_published}}</p>
+                <p>{{blog.min_read}}</p>
+                </div>
+                <div class="read-more">
+                <a href="{% url 'blog:blog' blog.id %}">READ MORE</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
 {% endblock %}

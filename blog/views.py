@@ -1,22 +1,23 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Blog
-import os
-from django.conf import settings
+
 def index(request):
     nav = True
-    blog = Blog.objects.order_by('date_published')[0] 
+    blog = Blog.objects.order_by('-date_published')[0]
     template = 'blog/index.html'
     context = {'blog':blog, 'nav':nav}
+    print(blogs)
     return render(request, template, context)
 
 def blogs(request):
+    blogs = Blog.objects.order_by('-date_published')
     template = 'blog/blogs.html'
-    context = {}
+    context = {'blogs':blogs}
     return render(request, template, context)
 
-def latest(request, pk):
-    template = 'blog/latest.html'
+def blog(request, pk):
+    template = 'blog/blog.html'
     context ={}
     return render(request, template, context)
 
